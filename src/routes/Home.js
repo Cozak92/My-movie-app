@@ -71,7 +71,8 @@ color:white;
 `
 
 export default () => {
-  const { loading, data } = useQuery(GET_MOVIES);
+  var { loading, data } = useQuery(GET_MOVIES,{pollInterval:500});
+  
   return (
     <Container>
       <Header>
