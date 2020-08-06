@@ -3,6 +3,7 @@ import {gql} from "apollo-boost";
 import {useQuery} from "@apollo/react-hooks"
 import styled from "styled-components";
 import Movie from "../components/Movie";
+import { Link } from "react-router-dom";
 
 const GET_MOVIES = gql`
   {
@@ -59,12 +60,24 @@ const Loading = styled.div`
   margin-top: 10px;
 `;
 
+const StyledLink = styled(Link)`
+text-decoration: none;
+
+&:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+color:white;
+
+`
+
 export default () => {
   const { loading, data } = useQuery(GET_MOVIES);
   return (
     <Container>
       <Header>
-        <Title>My movies app</Title>
+      < StyledLink to={`/`}>
+            <Title>My movies app</Title>
+        </StyledLink>
         <Subtitle>I love Movies</Subtitle>
       </Header>
       {loading && <Loading>Loading...</Loading>}
