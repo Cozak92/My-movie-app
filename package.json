@@ -1,6 +1,9 @@
 {
   "name": "my-movie-app",
   "version": "0.2.0",
+  "engines": {
+    "node": "10.x"
+  },
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
